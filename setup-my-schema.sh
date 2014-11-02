@@ -2,9 +2,9 @@
 echo "******CREATING DOCKER DATABASE******"
 gosu postgres postgres --single <<- EOSQL
    CREATE DATABASE docker;
-   CREATE USER docker;
-   ALTER USER docker WITH PASSWORD '${POSTGRESQL_PASS}'
-   GRANT ALL PRIVILEGES ON DATABASE docker to docker;
+   CREATE USER postgres;
+   ALTER USER postgres WITH PASSWORD '${POSTGRESQL_PASS}'
+   GRANT ALL PRIVILEGES ON DATABASE docker to postgres;
 EOSQL
 echo ""
 echo "******DOCKER DATABASE CREATED******
